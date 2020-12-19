@@ -1,0 +1,171 @@
+.display-4{
+
+    text-align: center;
+    font-weight: normal;
+    color: #ffffff
+}
+
+.sub-title{
+    text-align: center;
+    font-style: italic;
+    color: #ffffff
+}
+
+.graphtitle{
+  text-align: center;
+  font-weight: Bold;
+  color: #ffffff
+
+}
+
+.container-fluid{
+  background-color: #350d36;
+  border-radius: 0.3rem;
+  padding: 1rem 1rem;
+  color: #FFFFFF;
+
+}
+
+.jumbotron {
+    padding-left: 50px;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #350d36;
+    border-radius: 0.3rem; }
+    @media (min-width: 576px) {
+      .jumbotron {
+        padding: 4rem 2rem; } 
+    }
+
+
+.list {
+    padding-left: 50px;
+    text-align: center;
+    font-weight: normal;
+
+
+}
+
+* {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background: #f1f1f1;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    text-align: center;
+    background: #b0dbe9;
+  }
+  
+  .header h1 {
+    font-size: 50px;
+  }
+  
+  /* Style the top navigation bar */
+  .topnav {
+    background-color: #350d36;
+    overflow: hidden;
+    /* position: -webkit-sticky; */
+    /* position: sticky; */
+    top: 0;
+    border-radius: 0.3rem;
+  }
+  
+  /* Style the topnav links */
+  .topnav a {
+    float: right;
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-right: 1px solid white;
+  }
+  
+  .topnav a:last-child {
+    border-right: none;
+  }
+  
+  /* Change color on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: #350d36;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {   
+    float: left;
+    width: 100%;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 0%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card-fluid {
+    background-color: #f1f1f1;
+    padding: 20px 20px 20px 20px;
+    margin-top: 20px;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 20px;
+    text-align: Left;
+    background: #350d36;
+    margin-top: 20px;
+    color: #FFFFFF ;
+  }
+
+  .spacer {
+    padding: 20px;
+    text-align: center;
+    background: #f1f1f1;
+    margin-top: 20px;
+
+  }
+
+.btn-primary {
+    text-align: center;
+    background:  #350d36;
+    color:#ffffff;
+    font-weight: bold;
+    border: 1 px solid black;
+
+
+  }
+
+
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+  }
+  
+  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+  @media screen and (max-width: 400px) {
+    .topnav a {
+      float: none;
+      width: 100%;
+    }
+  }

@@ -1,0 +1,3 @@
+ALTER TABLE drug_data ADD COLUMN id SERIAL PRIMARY KEY;
+
+SELECT * FROM drug_data

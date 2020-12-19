@@ -1,0 +1,398 @@
+<html lang="en-us">
+
+<head>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+    
+  <meta charset="UTF-8">
+  <title>Drug Overdose Study</title>
+  <!-- bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <!-- <link rel="stylesheet" href="static/css/style.css"> -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+<div class="main" id="section1">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Drug Overdose Trends In the United States</h1>
+        <p class="sub-title">Sourced from the Center for Disease Control and Prevention(CDC)</p>
+    </div>
+</div>  
+
+<div class="topnav">
+    <div class="container">
+    <a href="#section1"><b>Visualizations</b></a>
+    <a href="#section2"><b>Project Summary</b></a>
+    <a href="http://drug-study.herokuapp.com/api/v1.0/alldrugs"><b>API data</b></a>
+      </div>
+</div>  
+
+<div class="row d-flex justify-content-center"></div>
+  <div class="spacer">    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="container-fluid">
+    <h2 class="graphtitle">Heat Map of Drug Overdose Deaths within the United States</h2>
+    </div>
+</div>
+
+<!-- <div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div> -->
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+    <div class="container">
+        <select id="graph5list1">
+            <option value="Cocaine ">Cocaine </option>
+            <option value="Heroin ">Heroin </option>
+            <option value="Methadone">Methadone</option>
+            <option value="Opioids ">Opioids </option>
+            <option value="Prescription Opioids">Prescription Opioids</option>     
+        </select>
+        
+            <select id="graph5list2">
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+            </select>
+        <button type="button" class="btn btn-primary" onclick="changegraph5()">Update Map</button>
+    </div>
+</div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-10">
+
+        <div id="plot5"></div>
+        <script src="{{url_for('static', filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="container-fluid">  
+    <h2 class="graphtitle">Comparison of Overdose Deaths by Year</h2>
+</div>  
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+    <div class="container">
+    <select id="list">
+        <option value="US">US - ALL</option>
+        <option value="AK">AK - Alaska</option>
+        <option value="AZ">AZ - Arizona</option>
+        <option value="CA">CA - California</option>
+        <option value="CO">CO - Colorado</option>
+        <option value="CT">CT - Connecticut</option>
+        <option value="DC">DC - District of Columbia</option>
+        <option value="DE">DE - Delaware</option>
+        <option value="FL">FL - Florida</option>
+        <option value="GA">GA - Georgia</option>
+        <option value="HI">HI - Hawaii</option>
+        <option value="IA">IA - Iowa</option>
+        <option value="IL">IL - Illinois</option>
+        <option value="IN">IN - Indiana</option>
+        <option value="KS">KS - Kansas</option>
+        <option value="KY">KY - Kentucky</option>
+        <option value="MA">MA - Massachusetts</option>
+        <option value="MD">MD - Maryland</option>
+        <option value="ME">ME - Maine</option>
+        <option value="MO">MO - Missouri</option>
+        <option value="MS">MS - Mississippi</option>
+        <option value="NC">NC - North Carolina</option>
+        <option value="NH">NH - New Hampshire</option>
+        <option value="NJ">NJ - New Jersey</option>
+        <option value="NM">NM - New Mexico</option>
+        <option value="NV">NV - Nevada</option>
+        <option value="NY">NY - New York</option>
+        <option value="OH">OH - Ohio</option>
+        <option value="OK">OK - Oklahoma</option>
+        <option value="OR">OR - Oregon</option>
+        <option value="RI">RI - Rhode Island</option>
+        <option value="SC">SC - South Carolina</option>
+        <option value="SD">SD - South Dakota</option>
+        <option value="TN">TN - Tennessee</option>
+        <option value="TX">TX - Texas</option>
+        <option value="UT">UT - Utah</option>
+        <option value="VA">VA - Virginia</option>
+        <option value="VT">VT - Vermont</option>
+        <option value="WA">WA - Washington</option>
+        <option value="WI">WI - Wisconsin</option>
+        <option value="WV">WV - West Virginia</option>
+        <option value="WY">WY - Wyoming</option>        
+    </select>
+    <button type="button" class="btn btn-primary" onclick="changegraph1()">Update Graph</button>
+    </div></div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-10">
+        <div id="plot1"></div>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
+    </div>  
+</div>
+
+<div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="container-fluid">
+        <h2 class="graphtitle">Side By Side Comparisons</h2>
+        <p class="sub-title">Select options from dropdowns to compare graphs</p>
+    </div>
+</div>
+
+<!-- <div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div> -->
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+    <div class="container">
+        <select id="list2">
+            <option value="US">US - ALL</option>
+            <option value="AK">AK - Alaska</option>
+            <option value="AZ">AZ - Arizona</option>
+            <option value="CA">CA - California</option>
+            <option value="CO">CO - Colorado</option>
+            <option value="CT">CT - Connecticut</option>
+            <option value="DC">DC - District of Columbia</option>
+            <option value="DE">DE - Delaware</option>
+            <option value="FL">FL - Florida</option>
+            <option value="GA">GA - Georgia</option>
+            <option value="HI">HI - Hawaii</option>
+            <option value="IA">IA - Iowa</option>
+            <option value="IL">IL - Illinois</option>
+            <option value="IN">IN - Indiana</option>
+            <option value="KS">KS - Kansas</option>
+            <option value="KY">KY - Kentucky</option>
+            <option value="MA">MA - Massachusetts</option>
+            <option value="MD">MD - Maryland</option>
+            <option value="ME">ME - Maine</option>
+            <option value="MO">MO - Missouri</option>
+            <option value="MS">MS - Mississippi</option>
+            <option value="NC">NC - North Carolina</option>
+            <option value="NH">NH - New Hampshire</option>
+            <option value="NJ">NJ - New Jersey</option>
+            <option value="NM">NM - New Mexico</option>
+            <option value="NV">NV - Nevada</option>
+            <option value="NY">NY - New York</option>
+            <option value="OH">OH - Ohio</option>
+            <option value="OK">OK - Oklahoma</option>
+            <option value="OR">OR - Oregon</option>
+            <option value="RI">RI - Rhode Island</option>
+            <option value="SC">SC - South Carolina</option>
+            <option value="SD">SD - South Dakota</option>
+            <option value="TN">TN - Tennessee</option>
+            <option value="TX">TX - Texas</option>
+            <option value="UT">UT - Utah</option>
+            <option value="VA">VA - Virginia</option>
+            <option value="VT">VT - Vermont</option>
+            <option value="WA">WA - Washington</option>
+            <option value="WI">WI - Wisconsin</option>
+            <option value="WV">WV - West Virginia</option>
+            <option value="WY">WY - Wyoming</option>        
+        </select>
+        <select id="list3">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+        <button type="button" class="btn btn-primary" onclick="changegraph2()">Update Graph</button>
+        <!-- <button onclick="changegraph2()">Update Graph</button> -->
+        </div>
+        </div>
+
+
+        <div class="col-md-5">
+            <div class="container">
+                <select id="list4">
+                    <option value="US">US - ALL</option>
+                    <option value="AK">AK - Alaska</option>
+                    <option value="AZ">AZ - Arizona</option>
+                    <option value="CA">CA - California</option>
+                    <option value="CO">CO - Colorado</option>
+                    <option value="CT">CT - Connecticut</option>
+                    <option value="DC">DC - District of Columbia</option>
+                    <option value="DE">DE - Delaware</option>
+                    <option value="FL">FL - Florida</option>
+                    <option value="GA">GA - Georgia</option>
+                    <option value="HI">HI - Hawaii</option>
+                    <option value="IA">IA - Iowa</option>
+                    <option value="IL">IL - Illinois</option>
+                    <option value="IN">IN - Indiana</option>
+                    <option value="KS">KS - Kansas</option>
+                    <option value="KY">KY - Kentucky</option>
+                    <option value="MA">MA - Massachusetts</option>
+                    <option value="MD">MD - Maryland</option>
+                    <option value="ME">ME - Maine</option>
+                    <option value="MO">MO - Missouri</option>
+                    <option value="MS">MS - Mississippi</option>
+                    <option value="NC">NC - North Carolina</option>
+                    <option value="NH">NH - New Hampshire</option>
+                    <option value="NJ">NJ - New Jersey</option>
+                    <option value="NM">NM - New Mexico</option>
+                    <option value="NV">NV - Nevada</option>
+                    <option value="NY">NY - New York</option>
+                    <option value="OH">OH - Ohio</option>
+                    <option value="OK">OK - Oklahoma</option>
+                    <option value="OR">OR - Oregon</option>
+                    <option value="RI">RI - Rhode Island</option>
+                    <option value="SC">SC - South Carolina</option>
+                    <option value="SD">SD - South Dakota</option>
+                    <option value="TN">TN - Tennessee</option>
+                    <option value="TX">TX - Texas</option>
+                    <option value="UT">UT - Utah</option>
+                    <option value="VA">VA - Virginia</option>
+                    <option value="VT">VT - Vermont</option>
+                    <option value="WA">WA - Washington</option>
+                    <option value="WI">WI - Wisconsin</option>
+                    <option value="WV">WV - West Virginia</option>
+                    <option value="WY">WY - Wyoming</option>        
+                </select>
+                <select id="list5">
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                </select>
+                <button type="button" class="btn btn-primary" onclick="changegraph3()">Update Graph</button>
+                <!-- <button onclick="changegraph3()">Update Graph</button> -->
+            </div>
+        
+
+        </div>
+</div>
+
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+        <div id="plot2"></div>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
+    </div>
+
+    <div class="col-md-5">
+        <div id="plot3"></div>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
+    </div>
+    
+</div>
+
+<div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="container-fluid">
+        <h2 class="graphtitle">State by State Comparison</h2>
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-5">
+    <div class="container">
+        <select id="graph4list1">
+            <option value="Cocaine ">Cocaine </option>
+            <option value="Heroin ">Heroin </option>
+            <option value="Methadone">Methadone</option>
+            <option value="Opioids ">Opioids </option>
+            <option value="Prescription Opioids">Prescription Opioids</option>     
+        </select>
+        <select id="graph4list2">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+        <button type="button" class="btn btn-primary" onclick="changegraph4()">Update Graph</button>
+        <!-- <button onclick="changegraph4()">Update Graph</button> -->
+        </div>
+    </div>
+
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-md-10">
+        <div id="plot4"></div>
+        <script src="{{url_for('static',filename='js/logic.js')}}"></script>
+        <!-- <script src="static/js/logic.js"></script> -->
+    </div>
+    
+</div>
+</div>
+
+<div class="main" id="section2"></div>
+<div class="topnav">
+    <div class="container">
+    <a href="#section1"><b>Visualizations</b></a>
+    <a href="#section2"><b>Project Summary</b></a>
+    <!-- <a href="http://drug-study.herokuapp.com/api/v1.0/alldrugs"><b>API data</b></a> -->
+      </div>
+</div> 
+
+<div class="row d-flex justify-content-center">
+<div class="spacer">    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+<div class="container-fluid">
+    <h2 class="graphtitle">Project Summary</h2>
+</div></div>
+
+<div class="row">
+    <div class="card-fluid">
+        <!-- <h4><li>The analyses in this repository use "Multiple Cause of Death" data from The VSRR National Vital Statistics System Database, which collects mortality data by time, geography and cause of death using death certificates.</li></h4> -->
+        <!-- <h1>header</h1> -->
+        <p>Deaths from drug overdose continue to contribute to mortality in the United States. In the past 3 decades, drug overdoses have killed approximately 870,000 people. Since first wave of the opioid epidemic began in the 1990s, the epidemic has expanded to include other synthetic, illicit drugs, including Heroin, Cocaine, Meth, prescription opioids and psychostimulants.</p>
+        <p>(DISCLAIMER : Due to Heroku data limits, psychostimulants were removed from the dataset)</p>
+        <p>The quality of data reported by medical examiners varies by state. The CDC has noted that some states have a tendency to report drug poisoning deaths without listing a specific drug. The analysis incorporates this research to identify states that have higher death rates as a result of overdose in the United States from 2016-2019.</p>
+        <p></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container-fluid">
+    <h2 class="graphtitle">References</h2>
+    <p><a href="https://healthdata.gov/dataset/vsrr-provisional-drug-overdose-death-counts">VSRR Provisional Drug Overdose Death Counts</a></p>
+    </div>  
+</div>
+
+<div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div>
+
+<div class="container-fluid">
+    <h3>Group 12 Members</h3>
+    <p>Sam Jabreen</p>
+    <p>Shimsy Varkey</p>
+    <p>Zhanna Kirbakayeva</p>
+    <p>Justin Chow</p>
+</div>
+
+</body>
+
+</html>

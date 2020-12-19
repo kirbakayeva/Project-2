@@ -1,0 +1,78 @@
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Drug Overdose Study</title>
+  <!-- bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <!-- <link rel="stylesheet" href="static/css/style.css"> -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Drug Ovedose Trends In the United States</h1>
+      <p class="sub-title">Sourced from the Center for Disease Control and Prevention(CDC)</p>
+        <!-- <button onclick="APILink()">See API for this data</button>
+        <script>
+            function APILink(){window.location='http://drug-study.herokuapp.com/api/v1.0/alldrugs';}
+        </script> -->
+    </div>
+</div>  
+
+<div class="topnav">
+    <div class="container">
+    <a href="http://drug-study.herokuapp.com/"><b>Visualizations</b></a>
+    <a href="http://drug-study.herokuapp.com/drugstudysummary.html"><b>Project Summary</b></a>
+    <a href="http://drug-study.herokuapp.com/api/v1.0/alldrugs"><b>API data</b></a>
+      </div>
+  </div>  
+
+  <div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div>
+
+  <div class="row d-flex justify-content-center"></div>
+  <div class="container-fluid">
+    <h2 class="graphtitle">Project Summary</h2>
+  </div>
+
+<div class="row">
+  <div class="card-fluid">
+    <!-- <h4><li>The analyses in this repository use "Multiple Cause of Death" data from The VSRR National Vital Statistics System Database, which collects mortality data by time, geography and cause of death using death certificates.</li></h4> -->
+    <!-- <h1>header</h1> -->
+    <p>Deaths from drug overdose continue to contribute to mortality in the United States. In the past 3 decades, drug overdoses have killed approximately 870,000 people. Since first wave of the opioid epidemic began in the 1990s, the epidemic has expanded to include other synthetic, illicit drugs, including Heroin, Cocaine, Meth, prescription opioids and psychostimulants.</p>
+    <p>(DISCLAIMER : Due to Heroku data limits, psychostimulants were removed from the dataset)</p>
+    <p>The quality of data reported by medical examiners varies by state. The CDC has noted that some states have a tendency to report drug poisoning deaths without listing a specific drug. The analysis incorporates this research to identify states that have higher death rates as a result of overdose in the United States from 2016-2019.</p>
+    <p></p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="container-fluid">
+  <h2 class="graphtitle">References</h2>
+  <p><a href="https://healthdata.gov/dataset/vsrr-provisional-drug-overdose-death-counts">VSRR Provisional Drug Overdose Death Counts</a></p>
+
+</div>
+
+<div class="row d-flex justify-content-center"></div>
+    <div class="spacer">    </div>
+</div>
+
+<div class="container-fluid">
+<h3>Group 12 Members</h3>
+<p>Sam Jabreen</p>
+<p>Shimsy Varkey</p>
+<p>Zhanna Kirbakayeva</p>
+<p>Justin Chow</p>
+  </div>
+
+  
+  </body>
+  </html>
